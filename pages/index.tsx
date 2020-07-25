@@ -15,17 +15,22 @@ interface Props {
 const Index: NextPage<Props> = ({ postsList, isError }) => {
   return (
     <AppLayout>
-      <PostsList posts={postsList} />
+      {isError ? (
+        <div>Error!</div>
+      ) : (
+        <>
+          <h2>Posts</h2>
+          <PostsList posts={postsList} />
+        </>
+      )}
     </AppLayout>
   );
 };
 
-Index.getInitialProps = async ({
-  store,
-}: NextPageContext): Promise<{ postsList: PostModel[] }> => {
+Index.getInitialProps = async ({ store }: NextPageContext) => {
   const { dispatch } = store;
   await fetchPosts(dispatch);
-  const { postsList } = store.getState();
+  const { postsList } = store.getState().postsList;
   return { postsList };
 };
 
