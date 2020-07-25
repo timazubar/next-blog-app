@@ -1,5 +1,7 @@
 # Next Blog App
 
+DEPRECATED: can not deploy app, because did not ignored .next folder with git
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
