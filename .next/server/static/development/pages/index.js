@@ -256,8 +256,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-bootstrap */ "react-bootstrap");
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_3__);
 var _jsxFileName = "E:\\TIMA\\Projects\\DevelopsToday\\next-blog-app\\components\\Post.tsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -270,25 +273,25 @@ const Post = ({
     title,
     body
   } = post;
-  return __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Card"], {
+  return __jsx(StyledCard, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13,
+      lineNumber: 14,
       columnNumber: 5
     }
   }, __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Card"].Body, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14,
+      lineNumber: 15,
       columnNumber: 7
     }
   }, __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Card"].Link, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15,
+      lineNumber: 16,
       columnNumber: 9
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -297,33 +300,56 @@ const Post = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16,
+      lineNumber: 17,
       columnNumber: 11
     }
   }, __jsx("a", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17,
+      lineNumber: 18,
       columnNumber: 13
     }
-  }, "Go to post"))), __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Card"].Title, {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 20,
-      columnNumber: 9
-    }
-  }, title), __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Card"].Body, {
+  }, "Go to post"))), __jsx(StyledTitle, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 21,
       columnNumber: 9
     }
-  }, body)));
+  }, title), __jsx(StyledText, {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 22,
+      columnNumber: 9
+    }
+  }, body), __jsx(StyledId, {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23,
+      columnNumber: 9
+    }
+  }, "id: ", id)));
 };
 
+const StyledCard = styled_components__WEBPACK_IMPORTED_MODULE_3___default()(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Card"])`
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 1rem 0;
+`;
+const StyledTitle = styled_components__WEBPACK_IMPORTED_MODULE_3___default()(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Card"].Title)`
+  font-size: 2rem;
+`;
+const StyledId = styled_components__WEBPACK_IMPORTED_MODULE_3___default()(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Card"].Subtitle)`
+  font-size: 0.8em;
+  font-weight: 400;
+`;
+const StyledText = styled_components__WEBPACK_IMPORTED_MODULE_3___default()(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Card"].Text)`
+  font-size: 1.5em;
+`;
 /* harmony default export */ __webpack_exports__["default"] = (Post);
 
 /***/ }),
@@ -339,34 +365,42 @@ const Post = ({
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Post__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Post */ "./components/Post.tsx");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Post__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Post */ "./components/Post.tsx");
 var _jsxFileName = "E:\\TIMA\\Projects\\DevelopsToday\\next-blog-app\\components\\PostsList.tsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
 const PostsList = ({
   posts
 }) => {
-  return __jsx("div", {
+  return __jsx(StyledDiv, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12,
+      lineNumber: 13,
       columnNumber: 5
     }
-  }, posts.map(post => __jsx(_Post__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }, posts.map(post => __jsx(_Post__WEBPACK_IMPORTED_MODULE_2__["default"], {
     post: post,
     key: post.id,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14,
+      lineNumber: 15,
       columnNumber: 9
     }
   })));
 };
 
+const StyledDiv = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 /* harmony default export */ __webpack_exports__["default"] = (PostsList);
 
 /***/ }),
@@ -2313,13 +2347,19 @@ if (false) {} else {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_AppLayout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/AppLayout */ "./components/AppLayout.tsx");
-/* harmony import */ var _components_PostsList__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/PostsList */ "./components/PostsList.tsx");
-/* harmony import */ var _redux_actions_postsListActions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../redux/actions/postsListActions */ "./redux/actions/postsListActions.ts");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-redux */ "react-redux");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-bootstrap */ "react-bootstrap");
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _components_AppLayout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/AppLayout */ "./components/AppLayout.tsx");
+/* harmony import */ var _components_PostsList__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/PostsList */ "./components/PostsList.tsx");
+/* harmony import */ var _redux_actions_postsListActions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../redux/actions/postsListActions */ "./redux/actions/postsListActions.ts");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-redux */ "react-redux");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_6__);
 var _jsxFileName = "E:\\TIMA\\Projects\\DevelopsToday\\next-blog-app\\pages\\index.tsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
 
 
 
@@ -2330,37 +2370,63 @@ const Index = ({
   postsList,
   isError
 }) => {
-  return __jsx(_components_AppLayout__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  return __jsx(_components_AppLayout__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 20,
       columnNumber: 5
     }
-  }, isError ? __jsx("div", {
+  }, isError ? __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Modal"].Dialog, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 22,
       columnNumber: 9
     }
-  }, "Something went wrong!") : __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("h2", {
+  }, __jsx(ErrorModal, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25,
+      lineNumber: 23,
       columnNumber: 11
     }
-  }, "Latest Posts:"), __jsx(_components_PostsList__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    posts: postsList,
+  }, "Error!")) : __jsx(Wrapper, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 26,
+      columnNumber: 9
+    }
+  }, __jsx("h2", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 27,
+      columnNumber: 11
+    }
+  }, "Latest Posts"), __jsx(_components_PostsList__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    posts: postsList,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 28,
       columnNumber: 11
     }
   })));
 };
+
+const ErrorModal = styled_components__WEBPACK_IMPORTED_MODULE_2___default()(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Modal"].Body)`
+  font-size: 1.5em;
+  font-weight: 500;
+  background-color: maroon;
+  color: white;
+`;
+const Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 
 Index.getInitialProps = async ({
   store
@@ -2368,7 +2434,7 @@ Index.getInitialProps = async ({
   const {
     dispatch
   } = store;
-  await Object(_redux_actions_postsListActions__WEBPACK_IMPORTED_MODULE_3__["fetchPosts"])(dispatch);
+  await Object(_redux_actions_postsListActions__WEBPACK_IMPORTED_MODULE_5__["fetchPosts"])(dispatch);
   const {
     postsList
   } = store.getState().postsList;
@@ -2381,7 +2447,7 @@ const mapStateToProps = state => ({
   isError: state.postsList.isError
 });
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_4__["connect"])(mapStateToProps)(Index));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_6__["connect"])(mapStateToProps)(Index));
 
 /***/ }),
 
