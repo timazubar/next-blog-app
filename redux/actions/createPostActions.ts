@@ -1,41 +1,45 @@
-import { AnyAction, Dispatch } from 'redux';
 import PostModel from '../../models/PostModel';
 import BlogService from '../../services/BlogService';
+import { Dispatch, AnyAction } from 'redux';
 
-export const SEND_POST_REQUEST = 'SEND_POST_REQUEST';
-export const SEND_POST_SUCCESS = 'SEND_POST_SUCCESS';
-export const SEND_POST_FAILURE = 'SEND_POST_FAILURE';
-export const TOGGLE_SENT_STATUS = 'TOGGLE_SENT_STATUS';
+enum actionTypes {
+  SEND_POST_REQUEST = 'SEND_POST_REQUEST',
+  SEND_POST_SUCCESS = 'SEND_POST_SUCCESS',
+  SEND_POST_FAILURE = 'SEND_POST_FAILURE',
 
-const postSendRequest = (): AnyAction => ({
-  type: SEND_POST_REQUEST,
-});
+  TOGGLE_SENT_STATUS = 'TOGGLE_SENT_STATUS',
+}
 
-const postSendSuccess = (): AnyAction => ({
-  type: SEND_POST_SUCCESS,
+const postSendRequested = (): AnyAction => ({
+  type: actionTypes.SEND_POST_REQUEST,
 });
 
 const postSendError = (error: Error): AnyAction => ({
-  type: SEND_POST_FAILURE,
+  type: actionTypes.SEND_POST_FAILURE,
   payload: error,
 });
 
-const toggleSentStatus = (): AnyAction => ({
-  type: TOGGLE_SENT_STATUS,
+const postSendSuccess = (): AnyAction => ({
+  type: actionTypes.SEND_POST_SUCCESS,
 });
 
-const sendPost = (dispatch: Dispatch) => async (
-  post: PostModel
-): Promise<void> => {
+const toggleSentStatus = (): AnyAction => ({
+  type: actionTypes.TOGGLE_SENT_STATUS,
+});
+
+const sendPost = (dispatch: Dispatch) => async (post: PostModel): Promise<void> => {
   const blogService = new BlogService();
   try {
-    dispatch(postSendRequest());
+    dispatch(postSendRequested());
     blogService.sendPost(post);
     dispatch(postSendSuccess());
     dispatch(toggleSentStatus());
-  } catch (error) {
-    dispatch(postSendError(error));
+    setTimeout(() => {
+      dispatch(toggleSentStatus());
+    }, 800);
+  } catch (err) {
+    dispatch(postSendError(err));
   }
 };
 
-export { sendPost };
+export { actionTypes, sendPost };

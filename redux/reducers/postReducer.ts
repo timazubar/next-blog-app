@@ -1,9 +1,5 @@
+import { actionTypes } from '../actions/postActions';
 import { AnyAction } from 'redux';
-import {
-  FETCH_POSTS_LIST_REQUEST,
-  FETCH_POSTS_LIST_SUCCESS,
-  FETCH_POSTS_LIST_FAILURE,
-} from '../actions/postsListActions';
 
 const initialState = {
   post: null,
@@ -11,35 +7,31 @@ const initialState = {
   isError: false,
 };
 
-type postState = typeof initialState;
+type PostState = typeof initialState;
 
-const postsListReducer = (
-  state = initialState,
-  action: AnyAction
-): postState => {
+const postReducer = (state = initialState, action: AnyAction): PostState => {
   switch (action.type) {
-    case FETCH_POSTS_LIST_REQUEST:
+    case actionTypes.FETCH_POST_REQUEST:
       return {
         ...state,
         isLoading: true,
         isError: false,
       };
-    case FETCH_POSTS_LIST_SUCCESS:
+    case actionTypes.FETCH_POST_SUCCESS:
       return {
         ...state,
         post: action.payload,
         isLoading: false,
       };
-    case FETCH_POSTS_LIST_FAILURE:
+    case actionTypes.FETCH_POST_FAILURE:
       return {
         ...state,
         isLoading: false,
         isError: true,
       };
-
     default:
       return { ...state };
   }
 };
 
-export default postsListReducer;
+export default postReducer;

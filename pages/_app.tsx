@@ -2,11 +2,11 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import withRedux from 'next-redux-wrapper';
 
+import store from '../redux/store';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import store from '../redux/store/store';
-
-const MyApp = ({ Component, pageProps, store }) => {
+const MyApp = (props: { Component: any; pageProps: any; store: any }) => {
+  const { Component, pageProps, store } = props;
   return (
     <Provider store={store}>
       <Component {...pageProps} />
@@ -17,9 +17,7 @@ const MyApp = ({ Component, pageProps, store }) => {
 MyApp.getInitialProps = async ({ Component, ctx }) => {
   return {
     pageProps: {
-      ...(Component.getInitialProps
-        ? await Component.getInitialProps(ctx)
-        : {}),
+      ...(Component.getInitialProps ? await Component.getInitialProps(ctx) : {}),
     },
   };
 };

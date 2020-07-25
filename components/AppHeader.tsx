@@ -6,13 +6,17 @@ import styled from 'styled-components';
 
 const AppHeader = () => {
   return (
-    <StyledNavbar bg='light' variant='light'>
+    <StyledNavbar bg="light" variant="light">
       <StyledNavbar.Brand>
-        <Link href='/'>Next Blog App</Link>
+        <Link href="/">
+          <a>Next Blog App</a>
+        </Link>
       </StyledNavbar.Brand>
       <Nav>
         <StyledNavLink>
-          <Link href='/posts/new'>New Post</Link>
+          <Link href="/posts/new">
+            <a>New Post</a>
+          </Link>
         </StyledNavLink>
       </Nav>
     </StyledNavbar>

@@ -1,0 +1,1 @@
+{"ast":null,"code":"var __jsx = React.createElement;\nimport React from 'react';\nimport AppLayout from '../../components/AppLayout';\n\nvar Post = function Post() {\n  return __jsx(React.Fragment, null, __jsx(AppLayout, null), __jsx(\"div\", null, \"This is post page\"));\n};\n\nexport default Post;","map":null,"metadata":{},"sourceType":"module"}

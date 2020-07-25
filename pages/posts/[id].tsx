@@ -7,7 +7,7 @@ import AppLayout from '../../components/AppLayout';
 import PostModel from '../../models/PostModel';
 import StateModel from '../../models/StateModel';
 
-import { fetchPostById } from '../../redux/actions/postActions';
+import { fetchPostByID } from '../../redux/actions/postActions';
 
 interface Props {
   post?: PostModel;
@@ -30,12 +30,9 @@ const Post: NextPage<Props> = ({ post, isError }) => {
   );
 };
 
-Post.getInitialProps = async ({
-  query,
-  store,
-}): Promise<{ post: PostModel }> => {
+Post.getInitialProps = async ({ query, store }): Promise<{ post: PostModel }> => {
   const { dispatch } = store;
-  await fetchPostById(query.id, dispatch);
+  await fetchPostByID(query.id, dispatch);
   const { post } = store.getState().post;
 
   return { post };

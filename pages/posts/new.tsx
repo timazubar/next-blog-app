@@ -20,12 +20,7 @@ interface Props extends State {
   sendPost: (post: PostModel) => Promise<void>;
 }
 
-const CreatePost: NextPage<Props> = ({
-  sendPost,
-  isSent,
-  isLoading,
-  isError,
-}) => {
+const CreatePost: NextPage<Props> = ({ sendPost, isSent, isLoading, isError }) => {
   const titleRef = useRef(null);
   const contentRef = useRef(null);
 
@@ -42,19 +37,19 @@ const CreatePost: NextPage<Props> = ({
           sendPost({ title, body });
         }}
       >
-        <label htmlFor='title'>
-          Post title: <input type='text' name='title' ref={titleRef} />
+        <label htmlFor="title">
+          Post title: <input type="text" name="title" ref={titleRef} />
         </label>
 
-        <label htmlFor='body'>
+        <label htmlFor="body">
           Contents:
-          <textarea name='body' ref={contentRef} />
+          <textarea name="body" ref={contentRef} />
         </label>
-        <button type='submit' disabled={isLoading}>
+        <button type="submit" disabled={isLoading}>
           Post!
         </button>
       </form>
-      {isSent && <div>The Post was created!</div>}
+      {isSent && <div>Your Post was created!</div>}
       {isError && <div>Something went wrong!</div>}
     </AppLayout>
   );
@@ -66,9 +61,7 @@ const mapStateToProps = (state: StateModel): State => ({
   isError: state.createPost.isError,
 });
 
-const mapDispatchToProps = (
-  dispatch: Dispatch
-): { sendPost: (post: PostModel) => Promise<void> } => ({
+const mapDispatchToProps = (dispatch: Dispatch): { sendPost: (post: PostModel) => Promise<void> } => ({
   sendPost: sendPost(dispatch),
 });
 
