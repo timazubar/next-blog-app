@@ -27,6 +27,10 @@
     "/index": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
+    ],
+    "/posts/new": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
     ]
   }
 }
