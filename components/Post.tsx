@@ -8,7 +8,7 @@ const Post = ({ post }) => {
     <Card>
       <Card.Body>
         <Card.Link>
-          <Link href={`/posts/${id}`}>Go to post</Link>
+          <Link href='/posts/[id]' as={`/posts/${id}`}>Go to post</Link>
         </Card.Link>
         <Card.Title>{title}</Card.Title>
         <Card.Body>{body}</Card.Body>

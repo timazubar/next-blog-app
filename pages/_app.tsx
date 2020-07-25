@@ -1,6 +1,5 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { createWrapper } from 'next-redux-wrapper';
 import withRedux from 'next-redux-wrapper';
 
 import 'bootstrap/dist/css/bootstrap.min.css';

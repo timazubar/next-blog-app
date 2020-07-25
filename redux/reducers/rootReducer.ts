@@ -1,10 +1,12 @@
 import { combineReducers } from 'redux';
 import postsListReducer from './postsListReducer';
 import postReducer from './postReducer';
+import createPostReducer from './createPostReducer';
 
 const rootReducer = combineReducers({
   postsList: postsListReducer,
-  postReducer: postReducer,
+  post: postReducer,
+  createPost: createPostReducer,
 });
 
 export default rootReducer;

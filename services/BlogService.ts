@@ -14,4 +14,8 @@ export default class BlogService {
     const { data } = await axios.get(`${this.API_URL}/posts/${id}`);
     return data;
   }
+
+  sendPost(post: PostModel): void {
+    axios.post(`${this.API_URL}/posts`, post);
+  }
 }
