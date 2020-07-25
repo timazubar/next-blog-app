@@ -27778,7 +27778,7 @@ var PostsService = /*#__PURE__*/function () {
 
 /***/ }),
 
-/***/ 2:
+/***/ 4:
 /*!************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fposts%2Fnew&absolutePagePath=E%3A%5CTIMA%5CProjects%5CDevelopsToday%5Cnext-blog-app%5Cpages%5Cposts%5Cnew.tsx ***!
   \************************************************************************************************************************************************************/
@@ -27801,5 +27801,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
+},[[4,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=new.js.map
